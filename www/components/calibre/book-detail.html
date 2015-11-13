@@ -1,0 +1,30 @@
+<ion-view view-title="{{book.title}}">
+    <ion-content>
+        <section class="row" ng-include="templates.bookinfo.url">
+        </section>
+
+        <section class="row">
+            <div class="col col-50">
+                <h4>Read</h4>
+                <ul>
+                    <li ng-repeat="format in book.data" style="float:left">
+                        <md-button class="md-fab" aria-label="{{format.format}}" ng-click="read(format.format)"
+                                   ng-show="format.format == 'EPUB'">
+                            <span>{{format.format}}</span>
+                        </md-button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col col-50">
+                <h4>Download</h4>
+                <ul>
+                    <li ng-repeat="format in book.data" style="float:left">
+                        <md-button class="md-fab" class="md-button" ng-href="{{downloadUrl(format.format)}}">
+                            <span>{{format.format}}</span>
+                        </md-button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </ion-content>
+</ion-view>

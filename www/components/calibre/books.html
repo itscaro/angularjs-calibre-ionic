@@ -1,0 +1,39 @@
+<ion-view view-title="Books">
+    <ion-content>
+        <section>
+            <form ng-submit="searchall(query)" class="row">
+                <md-input-container flex>
+                    <label>Search By Title</label>
+                    <input type="text" ng-model="query">
+                </md-input-container>
+                <md-button class="md-raised">Search</md-button>
+            </form>
+            <div class="row">
+                <md-input-container flex>
+                    <label>Search by Title in this page</label>
+                    <input type="text" ng-model="search.title">
+                </md-input-container>
+
+                <md-input-container flex>
+                    <label>Search By Language</label>
+                    <input type="text" ng-model="search.book.languagesName">
+                </md-input-container>
+            </div>
+        </section>
+
+        <section ng-show="!isLoading">
+            Number of books: {{count}}
+        </section>
+
+        <section class="row navigation" ng-include="templates.navigation.url" ng-show="!isLoading"></section>
+
+        <ion-list ng-show="!isLoading">
+            <ion-item
+                ng-repeat="book in books | orderBy: '-id' | filter:search"
+                data-id="{{book.id}}" ng-include="templates.bookinfo.url" ng-href="#/app/books/{{book.id}}">
+            </ion-item>
+        </ion-list>
+
+        <section class="row navigation" ng-include="templates.navigation.url" ng-show="!isLoading"></section>
+    </ion-content>
+</ion-view>
