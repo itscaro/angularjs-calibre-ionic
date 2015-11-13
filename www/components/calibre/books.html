@@ -21,19 +21,23 @@
             </div>
         </section>
 
-        <section ng-show="!isLoading">
-            Number of books: {{count}}
-        </section>
+        <ion-spinner class="ripple spinner-assertive" ng-show="isLoading" layout="row" layout-align="space-around"></ion-spinner>
 
-        <section class="row navigation" ng-include="templates.navigation.url" ng-show="!isLoading"></section>
+        <div ng-show="!isLoading">
+            <section>
+                Number of books: {{count}}
+            </section>
 
-        <ion-list ng-show="!isLoading">
-            <ion-item
-                ng-repeat="book in books | orderBy: '-id' | filter:search"
-                data-id="{{book.id}}" ng-include="templates.bookinfo.url" ng-href="#/app/books/{{book.id}}">
-            </ion-item>
-        </ion-list>
+            <section class="row navigation" ng-include="templates.navigation.url" ng-show="!isLoading"></section>
 
-        <section class="row navigation" ng-include="templates.navigation.url" ng-show="!isLoading"></section>
+            <ion-list>
+                <ion-item
+                    ng-repeat="book in books | orderBy: '-id' | filter:search"
+                    data-id="{{book.id}}" ng-include="templates.bookinfo.url" ng-href="#/app/books/{{book.id}}">
+                </ion-item>
+            </ion-list>
+
+            <section class="row navigation" ng-include="templates.navigation.url"></section>
+        </div>
     </ion-content>
 </ion-view>

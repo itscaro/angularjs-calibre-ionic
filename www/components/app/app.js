@@ -12,7 +12,7 @@ var Config = {
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', [
+angular.module('angular-calibre-ionic', [
     'ionic',
     'starter.controllers',
     'myApp.calibre',
@@ -51,7 +51,7 @@ angular.module('starter', [
             .state('app', {
                 url: '/app',
                 abstract: true,
-                templateUrl: 'templates/menu.html',
+                templateUrl: 'components/app/menu.html',
                 controller: 'AppCtrl'
             })
 
@@ -59,11 +59,23 @@ angular.module('starter', [
                 url: '/search',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/search.html'
+                        templateUrl: 'components/app/search.html'
+                    }
+                }
+            })
+
+            .state('app.about', {
+                url: '/about',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'components/app/about.html'
                     }
                 }
             });
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/books');
-    });
+    })
+
+
+;

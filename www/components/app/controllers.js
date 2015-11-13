@@ -9,14 +9,14 @@ angular.module('starter.controllers', [])
         //$scope.$on('$ionicView.enter', function(e) {
         //});
         $scope.isItemActive = function (item) {
-            return $location.path().indexOf(item.substring(1)) > -1;
+            return $location.path() == item.substring(1);
         };
 
         // Form data for the login modal
         $scope.loginData = {};
 
         // Create the login modal that we will use later
-        $ionicModal.fromTemplateUrl('templates/login.html', {
+        $ionicModal.fromTemplateUrl('components/app/login.html', {
             scope: $scope
         }).then(function (modal) {
             $scope.modal = modal;
@@ -42,18 +42,4 @@ angular.module('starter.controllers', [])
                 $scope.closeLogin();
             }, 1000);
         };
-    })
-
-    .controller('PlaylistsCtrl', function ($scope) {
-        $scope.playlists = [
-            {title: 'Reggae', id: 1},
-            {title: 'Chill', id: 2},
-            {title: 'Dubstep', id: 3},
-            {title: 'Indie', id: 4},
-            {title: 'Rap', id: 5},
-            {title: 'Cowbell', id: 6}
-        ];
-    })
-
-    .controller('PlaylistCtrl', function ($scope, $stateParams) {
     });
