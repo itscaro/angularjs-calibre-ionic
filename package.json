@@ -1,7 +1,7 @@
 {
   "name": "angularjs-calibre",
   "version": "1.1.1",
-  "description": "angularjs-calibre: An Ionic project",
+  "description": "angularjs-calibre",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
@@ -19,11 +19,12 @@
     "cordova-plugin-console",
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
+    "cordova-plugin-inappbrowser",
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [
-    "ios",
-    "android"
+    "android",
+    "windows"
   ]
 }

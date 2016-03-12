@@ -19,7 +19,7 @@
                 <h4>Download</h4>
                 <ul>
                     <li ng-repeat="format in book.data" style="float:left">
-                        <md-button class="md-fab" class="md-button" ng-href="{{downloadUrl(format.format)}}" browse-to="{{downloadUrl(format.format)}}">
+                        <md-button class="md-fab" browse-to="{{downloadUrl(format.format)}}">
                             <span>{{format.format}}</span>
                         </md-button>
                     </li>

@@ -23,7 +23,7 @@ angular.module('myApp.calibre',
                     views: {
                         'menuContent': {
                             templateUrl: 'components/calibre/book-detail.html',
-                            controller: 'BooksDetailCtrl'
+                            controller: 'BookDetailCtrl'
                         }
                     }
                 });

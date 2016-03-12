@@ -79,3 +79,13 @@
 /*section.navigation{*/
   /*margin: 15px 0;*/
 /*}*/
+
+
+.item-thumbnail-left > img:first-child {
+ max-height: 100px;
+ max-width: 80px;
+}
+
+.item-thumbnail-left {
+  min-height: 120px;
+}
